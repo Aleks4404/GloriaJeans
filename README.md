@@ -1,0 +1,1 @@
+# GloriaJeans [![Build status](https://ci.appveyor.com/api/projects/status/jh32bhm0b7jok1db?svg=true)](https://ci.appveyor.com/project/Aleks4404/gloriajeans)
