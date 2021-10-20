@@ -1,9 +1,11 @@
 package web.test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import web.data.DataHelper;
 
 import java.util.concurrent.TimeUnit;
@@ -16,17 +18,22 @@ public class GloriaJeansTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
     }
 
     @AfterEach
-    void tearDown() {
+    public void tearDown() {
         driver.quit();
+        driver = null;
     }
 
     @Test
