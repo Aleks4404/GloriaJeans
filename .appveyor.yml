@@ -12,6 +12,5 @@ build: off
 install:
 
 build_script:
-  - chmod +x gradlew
   - chmod +x driver/chromedriver
-  - ./gradlew test -Dselenide.headless=true --info
+  - ./gradlew test --infofo
