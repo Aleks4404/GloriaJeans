@@ -19,7 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GloriaJeansTest {
     DataHelper dataHelper = new DataHelper();
     private WebDriver driver;
-    private WebDriverWait wait;
 
     @BeforeAll
     static void setUpAll() {
@@ -29,7 +28,6 @@ public class GloriaJeansTest {
     @BeforeEach
     void setUp() {
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 5);
     }
 
     @AfterEach
@@ -50,7 +48,7 @@ public class GloriaJeansTest {
         driver.findElement(By.cssSelector("div.js-switchable-content.hide--no-hide-height.show.active > div.hide--no-hide-height.js-switchable-content > form.send-form.js-send-form.js-password-form > div.text-input > div.wrapper-text-zone.js-text-zone > input[name=\"password\"]")).sendKeys(DataHelper.generatePassword());
         driver.findElement(By.cssSelector("div.send-form__button-block.send-form__button-block--flex-wrap-wrap > button.js-button-form.press-button")).click();
         driver.findElement(By.cssSelector("div.send-form__button-block.send-form__button-block--flex-wrap-wrap > button.js-button-form.press-button")).click();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("p.caption-24.caption--uppercase.caption--bold.margin-bottom-16"));
         driver.findElement(By.cssSelector("p.caption-12.caption--underline.cursor-pointer.js-close-button")).click();
     }
@@ -101,7 +99,7 @@ public class GloriaJeansTest {
         driver.findElement(By.cssSelector("form.send-form.js-send-form.js-password-form > div.text-input > div.wrapper-text-zone.js-text-zone > input[name=\"email\"]")).sendKeys(DataHelper.getEmail());
         driver.findElement(By.name("password")).sendKeys(DataHelper.generatePassword());
         driver.findElement(By.cssSelector("div.button-show-password.js-button-show-password")).click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("button.js-button-form.press-button.margin-bottom-16")).click();
         driver.findElement(By.cssSelector("span.caption-14.margin-left-8.max-width-115.width-limit-ellipsis.js-customer-name-block")).click();
     }
