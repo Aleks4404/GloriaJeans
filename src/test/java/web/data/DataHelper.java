@@ -34,6 +34,23 @@ public class DataHelper {
     public static String getUserName() {
         return "Алексей";
     }
+
+    public static String getInvalidePhone1() {
+        return "1234567";
+    }
+
+    public static String generateInvalidePassword() {
+        return "пар";
+    }
+
+    public static String getInvalideEmail() {
+        return "gloria1234@mai";
+    }
+
+    public static String getInvalideUserName() {
+        return "Aleksey 123";
+    }
+
     public static String getInvalidePhone() {
         return "0000000000";
     }
