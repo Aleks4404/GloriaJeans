@@ -19,22 +19,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GloriaJeansTest {
     DataHelper dataHelper = new DataHelper();
     private WebDriver driver;
+    private WebDriverWait wait;
 
     @BeforeAll
     static void setUpAll() {
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
     }
 
     @BeforeEach
     void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, 5);
     }
 
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         driver.quit();
-        driver = null;
     }
 
     @Test
