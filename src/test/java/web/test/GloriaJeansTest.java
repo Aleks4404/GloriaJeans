@@ -49,6 +49,7 @@ public class GloriaJeansTest {
         driver.findElement(By.cssSelector("div.js-switchable-content.hide--no-hide-height.show.active > div.hide--no-hide-height.js-switchable-content > form.send-form.js-send-form.js-password-form > div.text-input > div.wrapper-text-zone.js-text-zone > input[name=\"email\"]")).sendKeys(DataHelper.generateEmail());
         driver.findElement(By.cssSelector("div.js-switchable-content.hide--no-hide-height.show.active > div.hide--no-hide-height.js-switchable-content > form.send-form.js-send-form.js-password-form > div.text-input > div.wrapper-text-zone.js-text-zone > input[name=\"password\"]")).sendKeys(DataHelper.generatePassword());
         driver.findElement(By.cssSelector("div.send-form__button-block.send-form__button-block--flex-wrap-wrap > button.js-button-form.press-button")).click();
+        driver.findElement(By.cssSelector("div.send-form__button-block.send-form__button-block--flex-wrap-wrap > button.js-button-form.press-button")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("p.caption-24.caption--uppercase.caption--bold.margin-bottom-16"));
         driver.findElement(By.cssSelector("p.caption-12.caption--underline.cursor-pointer.js-close-button")).click();
