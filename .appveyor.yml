@@ -1,4 +1,3 @@
-
 image: Ubuntu
 
 stack: jdk 11
@@ -13,5 +12,4 @@ install:
 
 build_script:
   - chmod +x gradlew
-  - chmod +x driver/chromedriver.exe
   - ./gradlew test --info
