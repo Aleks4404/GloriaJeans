@@ -16,7 +16,7 @@ public class GloriaJeansTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
     }
 
     @BeforeEach
@@ -29,23 +29,23 @@ public class GloriaJeansTest {
         driver.quit();
     }
 
-    @Test
-    @DisplayName("Регистрация с помощью Email")
-    void registrationViaEmail() {
-        driver.get("https://www.gloria-jeans.ru");
-        driver.findElement(By.xpath("//*[text()='Да, верно']")).click();
-        driver.findElement(By.cssSelector("span.caption-14.margin-left-8")).click();
-        driver.findElement(By.xpath("//div[15]/div/div/div[2]/div[2]")).click();
-        driver.findElement(By.name("firstName")).click();
-        driver.findElement(By.name("firstName")).sendKeys(DataHelper.generateUsersNameInRussian(""));
-        driver.findElement(By.cssSelector("div.js-switchable-content.hide--no-hide-height.show.active > div.hide--no-hide-height.js-switchable-content > form.send-form.js-send-form.js-password-form > div.text-input > div.wrapper-text-zone.js-text-zone > input[name=\"email\"]")).sendKeys(DataHelper.generateEmail());
-        driver.findElement(By.cssSelector("div.js-switchable-content.hide--no-hide-height.show.active > div.hide--no-hide-height.js-switchable-content > form.send-form.js-send-form.js-password-form > div.text-input > div.wrapper-text-zone.js-text-zone > input[name=\"password\"]")).sendKeys(DataHelper.generatePassword());
-        driver.findElement(By.cssSelector("div.send-form__button-block.send-form__button-block--flex-wrap-wrap > button.js-button-form.press-button")).click();
-        driver.findElement(By.cssSelector("div.send-form__button-block.send-form__button-block--flex-wrap-wrap > button.js-button-form.press-button")).click();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.cssSelector("p.caption-24.caption--uppercase.caption--bold.margin-bottom-16"));
-        driver.findElement(By.cssSelector("p.caption-12.caption--underline.cursor-pointer.js-close-button")).click();
-    }
+//    @Test
+//    @DisplayName("Регистрация с помощью Email")
+//    void registrationViaEmail() {
+//        driver.get("https://www.gloria-jeans.ru");
+//        driver.findElement(By.xpath("//*[text()='Да, верно']")).click();
+//        driver.findElement(By.cssSelector("span.caption-14.margin-left-8")).click();
+//        driver.findElement(By.xpath("//div[15]/div/div/div[2]/div[2]")).click();
+//        driver.findElement(By.name("firstName")).click();
+//        driver.findElement(By.name("firstName")).sendKeys(DataHelper.generateUsersNameInRussian(""));
+//        driver.findElement(By.cssSelector("div.js-switchable-content.hide--no-hide-height.show.active > div.hide--no-hide-height.js-switchable-content > form.send-form.js-send-form.js-password-form > div.text-input > div.wrapper-text-zone.js-text-zone > input[name=\"email\"]")).sendKeys(DataHelper.generateEmail());
+//        driver.findElement(By.cssSelector("div.js-switchable-content.hide--no-hide-height.show.active > div.hide--no-hide-height.js-switchable-content > form.send-form.js-send-form.js-password-form > div.text-input > div.wrapper-text-zone.js-text-zone > input[name=\"password\"]")).sendKeys(DataHelper.generatePassword());
+//        driver.findElement(By.cssSelector("div.send-form__button-block.send-form__button-block--flex-wrap-wrap > button.js-button-form.press-button")).click();
+//        driver.findElement(By.cssSelector("div.send-form__button-block.send-form__button-block--flex-wrap-wrap > button.js-button-form.press-button")).click();
+//        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+//        driver.findElement(By.cssSelector("p.caption-24.caption--uppercase.caption--bold.margin-bottom-16"));
+//        driver.findElement(By.cssSelector("p.caption-12.caption--underline.cursor-pointer.js-close-button")).click();
+//    }
 
 //    @Test // TODO Ввести код из СМС и нажать Enter
 //    @DisplayName("Регистрация с помощью номера телефона")
