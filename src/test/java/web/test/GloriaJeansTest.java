@@ -1,11 +1,9 @@
 package web.test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import web.data.DataHelper;
 
 import java.util.concurrent.TimeUnit;
@@ -18,19 +16,17 @@ public class GloriaJeansTest {
 
     @BeforeAll
     static void setUpAll() {
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
     }
 
     @BeforeEach
     void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
     }
 
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         driver.quit();
-        driver = null;
     }
 
     @Test
