@@ -30,7 +30,6 @@ public class RegistrationFormTest {
         ChromeOptions options = new ChromeOptions();
 //        options.addArguments("--disable-dev-shm-usage");
 //        options.addArguments("--no-sandbox");
-//        options.addArguments("--headless");
         options.addArguments("headless");
         // You should set window size for better resolution and screen capture
         options.addArguments("window-size=1200x600");
@@ -117,7 +116,7 @@ public class RegistrationFormTest {
         driver.findElement(By.name("password")).sendKeys(DataHelper.generatePassword());
         driver.findElement(By.cssSelector("button.js-button-form.press-button.margin-bottom-16")).click();
         String expected = "Неверное имя пользователя или пароль.";
-        String actual = driver.findElement(By.xpath("//form/p[2]")).getText();
+        String actual = driver.findElement(By.cssSelector("p.js-error-block-form.caption-12.caption--red.margin-bottom-16.caption-align-center.js-error-block-form")).getText();
         assertEquals(expected, actual);
     }
 
