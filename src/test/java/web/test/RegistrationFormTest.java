@@ -28,9 +28,12 @@ public class RegistrationFormTest {
     @BeforeEach
     void setUp() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
+//        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--no-sandbox");
+//        options.addArguments("--headless");
+        options.addArguments("headless");
+        // You should set window size for better resolution and screen capture
+        options.addArguments("window-size=1200x600");
         driver = new ChromeDriver(options);
         driver.get("https://www.gloria-jeans.ru");
     }
