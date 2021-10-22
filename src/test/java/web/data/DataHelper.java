@@ -10,7 +10,7 @@ public class DataHelper {
 
     // TODO Ввести Валидный номер телефона!!!
     public static String generateNamberPhone() {
-        return "9967434359";
+        return "1234567890";
     }
 
     public static String generateUsersNameInRussian(String locale) {
