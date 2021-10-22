@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import web.data.DataThings;
 
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -31,7 +30,7 @@ public class SearchThingsTest {
 //        options.addArguments("headless");
 
         driver = new ChromeDriver(options);
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
         driver.get("https://www.gloria-jeans.ru");
     }
 
@@ -51,7 +50,7 @@ public class SearchThingsTest {
         String expected = "РЕЗУЛЬТАТЫ ПОИСКА";
         String actual = driver.findElement(By.xpath("//div/h1")).getText();
         String expected1 = DataThings.getThings();
-        String actual1 =driver.findElement(By.cssSelector("span.js-search-text")).getText();
+        String actual1 = driver.findElement(By.cssSelector("span.js-search-text")).getText();
         assertEquals(expected, actual);
         assertEquals(expected1, actual1);
     }
@@ -66,9 +65,9 @@ public class SearchThingsTest {
         String expected = "РЕЗУЛЬТАТЫ ПОИСКА";
         String actual = driver.findElement(By.xpath("//div/h1")).getText();
         String expected1 = "НЕТ ТОВАРОВ";
-        String actual1 =driver.findElement(By.cssSelector("span.js-main-listing-quantity")).getText();
+        String actual1 = driver.findElement(By.cssSelector("span.js-main-listing-quantity")).getText();
         String expected2 = "К сожалению, нет товаров, подходящих под ваш запрос.";
-        String actual2 =driver.findElement(By.cssSelector("div.text-message-empty-product-list.text-message-empty-product-list--block > p")).getText();
+        String actual2 = driver.findElement(By.cssSelector("div.text-message-empty-product-list.text-message-empty-product-list--block > p")).getText();
         assertEquals(expected, actual);
         assertEquals(expected1, actual1);
         assertEquals(expected2, actual2);
@@ -84,9 +83,9 @@ public class SearchThingsTest {
         String expected = "РЕЗУЛЬТАТЫ ПОИСКА";
         String actual = driver.findElement(By.xpath("//div/h1")).getText();
         String expected1 = "НЕТ ТОВАРОВ";
-        String actual1 =driver.findElement(By.cssSelector("span.js-main-listing-quantity")).getText();
+        String actual1 = driver.findElement(By.cssSelector("span.js-main-listing-quantity")).getText();
         String expected2 = "К сожалению, нет товаров, подходящих под ваш запрос.";
-        String actual2 =driver.findElement(By.cssSelector("div.text-message-empty-product-list.text-message-empty-product-list--block > p")).getText();
+        String actual2 = driver.findElement(By.cssSelector("div.text-message-empty-product-list.text-message-empty-product-list--block > p")).getText();
         assertEquals(expected, actual);
         assertEquals(expected1, actual1);
         assertEquals(expected2, actual2);
@@ -119,7 +118,7 @@ public class SearchThingsTest {
     @Test
     @DisplayName("Поиск одежды для подростков по каталогу и добавление а избранное")
     public void shouldSearcForThingsForTeenagersnTheCatalogAndAddFavorites() {
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
         driver.findElement(By.xpath("//*[text()='Да, верно']")).click();
         driver.findElement(By.xpath("//div[3]/div[2]/div[4]/div[1]")).click();
         driver.findElement(By.xpath("//body/div[2]/div/div/div/p")).click();
@@ -155,7 +154,7 @@ public class SearchThingsTest {
 
     @Test
     @DisplayName("Поиск одежды для новорожденых по каталогу и добавление в корзину")
-    public void searchForClothesForNewbornsInTheCatalogAndAddToTheCart()  {
+    public void searchForClothesForNewbornsInTheCatalogAndAddToTheCart() {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         driver.findElement(By.xpath("//*[text()='Да, верно']")).click();
         driver.findElement(By.xpath("//div[3]/div[2]/div[6]/div")).click();
@@ -211,7 +210,7 @@ public class SearchThingsTest {
 
     @Test
     @DisplayName("Добавление в корзину и покупка одежды")
-    public void shouldCheckTheAdditionoTheCartAndThePurchaseOfTheProduct(){
+    public void shouldCheckTheAdditionoTheCartAndThePurchaseOfTheProduct() {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         driver.findElement(By.xpath("//*[text()='Да, верно']")).click();
         driver.findElement(By.xpath("//div[3]/div[2]/div[3]/div")).click();
@@ -233,7 +232,7 @@ public class SearchThingsTest {
 
     @Test
     @DisplayName("Поиск и покупка одежды")
-    public void shouldFindAndBuyClothes(){
+    public void shouldFindAndBuyClothes() {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         driver.findElement(By.xpath("//*[text()='Да, верно']")).click();
         driver.findElement(By.xpath("//div[2]/div[5]/div")).click();
