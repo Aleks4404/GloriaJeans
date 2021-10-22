@@ -20,7 +20,7 @@ dependencies {
     testImplementation("io.github.bonigarcia:webdrivermanager:5.0.2")
     testImplementation 'com.github.javafaker:javafaker:1.0.1'
     testImplementation("io.github.bonigarcia:webdrivermanager:4.4.3")
-
+    implementation group: 'com.bmuschko', name: 'gradle-docker-plugin', version: '6.7.0'
 }
 
 test {
