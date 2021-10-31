@@ -4,8 +4,6 @@
 
 ## [Ефимов Алексей Геннадьевич](https://github.com/Aleks4404)
 
-### [Тестовое задание на QA Automation](Documents/Task.md)
-
 ### [Test Plan](Documents/TestPlan.md)
 
 ### [Test Case](Documents/TestCase.md)
